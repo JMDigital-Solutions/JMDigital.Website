@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./_variables.scss";
+@import "./_mixins.scss";
+
+@import '~font-awesome/css/font-awesome.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	@include text-format();
+	overflow-x: hidden;
+	font-size: 1rem;
+}
+
+h1,
+h2 {	
+	@include heading-format();
+	font-weight: bold;
+	text-align: center;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	@include heading-format();
+	text-decoration: underline;
+	text-align: center;
+	font-weight: bold;
+}
+
+p {
+	text-indent: 1.5em;
+}
+
+a {
+	color: $dark-color;
+	font-weight: bold;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+
+	&:focus,
+	&:hover,
+	&.active {
+		color: $accent-color;
+	}
+}
+
+blockquote {
+	font-style: italic;
+	color: $dark-color; 
+	border-left: 5px solid $primary-color-dark;
+	padding: 1rem 2rem;
+}
+
+header.masthead {
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	text-align: center;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	& .page-heading {
+		padding: 15rem 0 10rem 0;
+	}
+
+	& .page-heading h1 {
+		font-size: 3rem;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	& .page-heading .subheading {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+}
+
+section {
+	text-align: justify;
+	padding: 5rem 0;
+}
+
+button.mat-raised-button {
+	font-size: 1.25rem;
+	height: 3rem !important;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.mat-fab {
+
+	& .mat-button-wrapper {
+		line-height: 17px !important;
+	}
+
+	&:hover{
+		color: white !important;
+	}
+	
+	&:focus {
+		outline:0
+	}
+
+	& .mat-button-wrapper {
+		padding: 12px 0 !important;
+	}
+}
+
+.bg-light-primary {
+	@include background-opacity($primary-color-dark, 0.2);
+}
+
+.card {
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+	@include background-opacity($primary-color-light, 0.5);
+	border: 2px solid rgba(0, 0, 0, 0.5);
+
+	.card-header {
+		@include background-opacity($primary-color-dark, 0.6);
+		border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	}
+	
+}
+
+form {
+	& .mat-input-container {
+		width: 100%;
+	}
+
+	& .form-control:focus {
+		background-color: transparent;
+	}
+}
+
+footer {
+	padding: 2rem 0 2rem 0;
+	background: $dark-color;
+	text-align: center;
+	color: white;
+}

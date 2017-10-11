@@ -1,0 +1,59 @@
+@import "../../../_variables.scss";
+@import "../../../_mixins.scss";
+
+.mat-tab-nav-bar {
+	border-bottom: 0;
+
+	& .mat-tab-link {
+		font-size: 1.3rem;
+		opacity: 1;
+	}
+}
+
+.navbar {
+	background: transparent;
+	font-size: 1.3rem;
+	border-radius: 2px;
+	transition: all .5s;
+
+	.navbar-brand {
+		color: #212121;
+		font-size: 2rem;
+
+		&:active,
+		&:hover {
+			color: $accent-color;
+		}
+	}
+
+	.nav-link {
+		color: $dark-color;
+		border-radius: 2px;
+
+		&.active {
+			color: $accent-color;
+			text-decoration: underline;
+		}
+		
+		&:hover {
+			@include background-opacity($primary-color-light, 0.3);
+		}
+	}
+
+	.navbar-toggler {
+		padding: 0;
+
+		&:focus, 
+		&:hover {
+			color: $accent-color;
+			text-decoration: none;
+		}
+	}
+}
+
+@media (max-width: 768px) { 
+	.navbar-nav {
+		width: 35%;
+		text-align: right;
+	}
+}
