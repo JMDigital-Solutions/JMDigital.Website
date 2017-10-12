@@ -9,18 +9,9 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-	constructor(private _router: Router) { }
+	constructor() { }
 
 	ngOnInit() {
-	}
-
-	navigate() {
-
-		this._router.events.subscribe(() => {
-			window.scrollTo(0, 0);
-		});
-
-		this._router.navigate(['/acerca']);
 	}
 
 }

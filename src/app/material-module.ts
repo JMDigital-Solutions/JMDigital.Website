@@ -7,12 +7,14 @@ import { MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule, Mat
 		MatIconModule,
 		MatInputModule,
 		MatFormFieldModule,
+		MatTabsModule
 	],
 	exports: [
 		MatButtonModule,
 		MatIconModule,
 		MatInputModule,
 		MatFormFieldModule,
+		MatTabsModule
 	]
 })
 export class MaterialModule { }

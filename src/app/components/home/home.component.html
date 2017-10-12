@@ -19,7 +19,7 @@
 					que te destaquen dentro del mercado.
 				</p>
 				<div class="text-center">
-					<button md-raised-button class="mt-4" color="primary" role="button" (click)="navigate()">Conocé Más...</button>
+					<button mat-raised-button class="mt-4" color="primary" role="button" [routerLink]="['/acerca']">Conocé Más...</button>
 				</div>
 			</div>
 		</div>
@@ -32,25 +32,25 @@
 				<h4>Encontranos en:</h4>
 				<ul class="list-inline text-center mt-4 mb-4">
 					<li class="list-inline-item">
-						<button md-fab>
-							<md-icon class="md-20">
+						<a href="https://www.facebook.com/JMDigital.Solutions/" mat-fab>
+							<mat-icon>
 								<i class="fa fa-facebook"></i>
-							</md-icon>
-						</button>
+							</mat-icon>
+						</a>
 					</li>
 					<li class="list-inline-item">
-						<button md-fab>
-							<md-icon class="md-20">
+						<a mat-fab>
+							<mat-icon>
 								<i class="fa fa-google-plus"></i>
-							</md-icon>
-						</button>
+							</mat-icon>
+						</a>
 					</li>
 					<li class="list-inline-item">
-						<button md-fab>
-							<md-icon class="md-20">
+						<a href="https://twitter.com/JMDigitalSol" mat-fab>
+							<mat-icon>
 								<i class="fa fa-twitter"></i>
-							</md-icon>
-						</button>
+							</mat-icon>
+						</a>
 					</li>
 				</ul>
 			</div>

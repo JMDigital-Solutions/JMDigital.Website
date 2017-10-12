@@ -20,9 +20,9 @@ export const navbarAnimations = trigger('navbarAnimations', [
 	transition('void => *', [
 
 		group([
-			query('li.mat-tab-link', style({ opacity: 0 }), { optional: true }),
+			query('li a', style({ opacity: 0 }), { optional: true }),
 
-			query('li.mat-tab-link',
+			query('li a',
 				stagger(300, useAnimation(bounceInLeftAnimation)), { optional: true }
 			),
 		]),

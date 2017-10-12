@@ -1,4 +1,5 @@
 import { Component, NgZone, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	moduleId: module.id,
@@ -8,8 +9,12 @@ import { Component, NgZone, Inject, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-	constructor() { }
+	constructor(private _router: Router) { }
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this._router.events.subscribe(() => {
+			window.scrollTo(0, 0);
+		});
+	}
 
 }
