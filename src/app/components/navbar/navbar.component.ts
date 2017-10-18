@@ -21,18 +21,18 @@ export class NavbarComponent implements OnInit {
 
 	shrinkNav = false;
 
-	// @HostListener('window:scroll', [])
-	// onWindowScroll() {
-	// 	if (window.pageYOffset > 100) {
-	// 		this.zone.run(() => {
-	// 			this.shrinkNav = true;
-	// 		});
-	// 	} else {
-	// 		this.zone.run(() => {
-	// 			this.shrinkNav = false;
-	// 		});
-	// 	}
-	// }
+	@HostListener('window:scroll', [])
+	onWindowScroll() {
+		if (window.pageYOffset > 100) {
+			this.zone.run(() => {
+				this.shrinkNav = true;
+			});
+		} else {
+			this.zone.run(() => {
+				this.shrinkNav = false;
+			});
+		}
+	}
 
 	constructor(private zone: NgZone) {}
 
