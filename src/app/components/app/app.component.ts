@@ -12,9 +12,6 @@ export class AppComponent implements OnInit {
 	constructor(private _router: Router) { }
 
 	ngOnInit(): void {
-		this._router.events.subscribe(() => {
-			window.scrollTo(0, 0);
-		});
 	}
 
 }

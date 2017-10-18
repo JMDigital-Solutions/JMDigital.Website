@@ -22,7 +22,7 @@ import { AboutComponent } from './components/about/about.component';
 		AboutComponent
 	],
 	imports: [
-		BrowserModule,
+		BrowserModule.withServerTransition({appId: 'jmdigital-website'}),
 		AppRoutingModule,
 		FormsModule,
 		BrowserAnimationsModule,
