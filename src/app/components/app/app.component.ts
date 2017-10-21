@@ -1,5 +1,4 @@
 import { Component, NgZone, Inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
 	moduleId: module.id,
@@ -9,9 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-	constructor(private _router: Router) { }
+	constructor() { }
 
 	ngOnInit(): void {
+
 	}
 
 }
