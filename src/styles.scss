@@ -121,6 +121,21 @@ button.mat-raised-button {
 	}
 }
 
+.mat-mini-fab {
+
+	& i{
+		font-weight: bolder;
+	}
+
+	&:hover{
+		color: white !important;
+	}
+	
+	&:focus {
+		outline:0
+	}
+}
+
 .bg-light-primary {
 	@include background-opacity($primary-color-dark, 0.2);
 }
@@ -143,9 +158,13 @@ form {
 	& .mat-input-container {
 		width: 100%;
 	}
-
+	
 	& .form-control:focus {
 		background-color: transparent;
+		outline: 0;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
 	}
 }
 

@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </header>
-<section class="bg-light-primary">
+<section class="bg-light-primary" id="contactForm">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 mx-auto">
@@ -20,12 +20,12 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Nombre" required autocomplete="false" [(ngModel)]="ContactModel.name" name="name">
+										<input matInput class="form-control" placeholder="Nombre" required [(ngModel)]="ContactModel.name" name="name">
 									</mat-form-field>
 								</div>
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Apellido" required autocomplete="false" [(ngModel)]="ContactModel.lastName"
+										<input matInput class="form-control" placeholder="Apellido" required [(ngModel)]="ContactModel.lastName"
 										 name="lastName">
 									</mat-form-field>
 								</div>
@@ -33,7 +33,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="email" class="form-control" placeholder="Email" required autocomplete="false" [(ngModel)]="ContactModel.email"
+										<input matInput type="email" class="form-control" placeholder="Email" required [(ngModel)]="ContactModel.email"
 										 name="email">
 									</mat-form-field>
 								</div>
@@ -41,7 +41,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="text" class="form-control" placeholder="Telefono" autocomplete="false" [(ngModel)]="ContactModel.phone"
+										<input matInput type="text" class="form-control" placeholder="Telefono" [(ngModel)]="ContactModel.phone"
 										 name="phone">
 									</mat-form-field>
 								</div>
@@ -49,7 +49,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required autocomplete="false" [(ngModel)]="ContactModel.message"
+										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required [(ngModel)]="ContactModel.message"
 										 name="message"></textarea>
 									</mat-form-field>
 								</div>
