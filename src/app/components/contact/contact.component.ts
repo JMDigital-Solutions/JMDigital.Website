@@ -1,5 +1,6 @@
 import { ContactFormModel } from '../../models/ContactFormModel';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
 	moduleId: module.id,
@@ -10,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
 	_contactModel: ContactFormModel = new ContactFormModel();
+	@ViewChild('contactForm') contactForm: NgForm;
 
 	get ContactModel() {
 		return this._contactModel;
@@ -20,8 +22,9 @@ export class ContactComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	onSubmit(contactForm) {
+	onSubmit() {
 		this._contactModel.isSubmited = true;
+		console.log(this.contactForm);
 	}
 
 }

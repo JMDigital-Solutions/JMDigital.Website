@@ -16,7 +16,7 @@
 				<div class="card">
 					<h5 class="card-header">Contacto</h5>
 					<div class="card-body">
-						<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+						<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<mat-form-field>
@@ -26,15 +26,15 @@
 								<div class="form-group col-md-6">
 									<mat-form-field>
 										<input matInput class="form-control" placeholder="Apellido" required [(ngModel)]="ContactModel.lastName"
-										 name="lastName">
+											name="lastName">
 									</mat-form-field>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="email" class="form-control" placeholder="Email" required [(ngModel)]="ContactModel.email"
-										 name="email">
+										<input matInput type="email" class="form-control" placeholder="Email" [(ngModel)]="ContactModel.email"
+											name="email" email required aria-describedby="emailHelperBlock">
 									</mat-form-field>
 								</div>
 							</div>
@@ -42,7 +42,7 @@
 								<div class="form-group col-md">
 									<mat-form-field>
 										<input matInput type="text" class="form-control" placeholder="Telefono" [(ngModel)]="ContactModel.phone"
-										 name="phone">
+										 	name="phone">
 									</mat-form-field>
 								</div>
 							</div>
@@ -50,11 +50,11 @@
 								<div class="form-group col-md">
 									<mat-form-field>
 										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required [(ngModel)]="ContactModel.message"
-										 name="message"></textarea>
+										 	name="message"></textarea>
 									</mat-form-field>
 								</div>
 							</div>
-							<button mat-raised-button type="submit" color="accent" role="button" [disabled]="!contactForm.form.valid">Enviar</button>
+							<button mat-raised-button type="submit" color="accent" role="button" [disabled]="!contactForm.valid">Enviar</button>
 						</form>
 					</div>
 				</div>
