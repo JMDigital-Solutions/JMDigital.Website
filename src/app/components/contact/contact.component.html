@@ -20,12 +20,12 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Nombre" required [(ngModel)]="ContactModel.name" name="name">
+										<input matInput class="form-control" placeholder="Nombre" required [(ngModel)]="name" name="name">
 									</mat-form-field>
 								</div>
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Apellido" required [(ngModel)]="ContactModel.lastName"
+										<input matInput class="form-control" placeholder="Apellido" required [(ngModel)]="lastName"
 											name="lastName">
 									</mat-form-field>
 								</div>
@@ -33,7 +33,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="email" class="form-control" placeholder="Email" [(ngModel)]="ContactModel.email"
+										<input matInput type="email" class="form-control" placeholder="Email" [(ngModel)]="email"
 											name="email" email required aria-describedby="emailHelperBlock">
 									</mat-form-field>
 								</div>
@@ -41,7 +41,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="text" class="form-control" placeholder="Telefono" [(ngModel)]="ContactModel.phone"
+										<input matInput type="text" class="form-control" placeholder="Telefono" [(ngModel)]="phone"
 										 	name="phone">
 									</mat-form-field>
 								</div>
@@ -49,7 +49,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required [(ngModel)]="ContactModel.message"
+										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required [(ngModel)]="message"
 										 	name="message"></textarea>
 									</mat-form-field>
 								</div>
