@@ -39,6 +39,7 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 					(values) => {
 						const data = values;
 						console.log(data);
+						this._isSubmited = true;
 					},
 					(error) => {
 						console.log(error);
