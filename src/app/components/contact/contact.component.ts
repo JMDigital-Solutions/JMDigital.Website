@@ -22,6 +22,7 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 	email: String;
 	phone: String;
 	message: String;
+	captchaToken: String;
 
 	@ViewChild('contactForm') contactForm: NgForm;
 
@@ -58,7 +59,7 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 	}
 
 	buildMailModel() {
-		this._mailModel = new MailModel(this.name + ' ' + this.lastName, this.email, this.phone, this.message);
+		this._mailModel = new MailModel(this.name + ' ' + this.lastName, this.email, this.phone, this.message, this.captchaToken);
 	}
 
 }

@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
@@ -31,7 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
 		FormsModule,
 		BrowserAnimationsModule,
 		MaterialModule,
-		HttpClientModule
+		HttpClientModule,
+		RecaptchaFormsModule,
+		RecaptchaModule.forRoot(),
 	],
 	providers: [CanDeactivateGuardService],
 	bootstrap: [AppComponent]

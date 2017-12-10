@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </header>
-<section class="bg-light-primary" id="contactForm">
+<section class="bg-light-primary">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 mx-auto">
@@ -54,7 +54,17 @@
 									</mat-form-field>
 								</div>
 							</div>
-							<button mat-raised-button type="submit" color="accent" role="button" [disabled]="!contactForm.valid">Enviar</button>
+							<div class="row">
+								<div class="col-md-6 pb-3 mx-auto">
+									<re-captcha name="captchaToken"
+										class="g-recaptcha"
+										siteKey="6LdlfTsUAAAAADpUiMbnFICV3cLoGhB5qWb1IcUV" 
+										required
+										[(ngModel)]="captchaToken"
+										#captchaControl="ngModel"></re-captcha>
+								</div>
+							</div>
+							<button mat-raised-button type="submit" color="accent" role="button" [disabled]="!contactForm.valid || !captchaControl.valid">Enviar</button>
 						</form>
 					</div>
 				</div>
