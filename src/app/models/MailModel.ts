@@ -1,9 +1,8 @@
-export class MailModel {
-	constructor(
-		public fullName: String,
-		public email: String,
-		public phoneNbr: String,
-		public message: String,
-		public captchaToken: String
-	) {}
+export interface MailModel {
+	name: String;
+	lastName: String;
+	email: String;
+	phoneNbr: String;
+	message: String;
+	captchaToken: String;
 }

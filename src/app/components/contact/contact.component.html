@@ -16,16 +16,16 @@
 				<div class="card">
 					<h5 class="card-header">Contacto</h5>
 					<div class="card-body">
-						<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+						<form (ngSubmit)="onSubmit()" #contactForm="ngForm" method="post">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Nombre" required [(ngModel)]="name" name="name">
+										<input matInput class="form-control" placeholder="Nombre" required [(ngModel)]="_mailModel.name" name="name">
 									</mat-form-field>
 								</div>
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Apellido" required [(ngModel)]="lastName"
+										<input matInput class="form-control" placeholder="Apellido" required [(ngModel)]="_mailModel.lastName"
 											name="lastName">
 									</mat-form-field>
 								</div>
@@ -33,7 +33,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="email" class="form-control" placeholder="Email" [(ngModel)]="email"
+										<input matInput type="email" class="form-control" placeholder="Email" [(ngModel)]="_mailModel.email"
 											name="email" email required aria-describedby="emailHelperBlock">
 									</mat-form-field>
 								</div>
@@ -41,7 +41,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="text" class="form-control" placeholder="Telefono" [(ngModel)]="phone"
+										<input matInput type="text" class="form-control" placeholder="Telefono" [(ngModel)]="_mailModel.phoneNbr"
 										 	name="phone">
 									</mat-form-field>
 								</div>
@@ -49,7 +49,7 @@
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required [(ngModel)]="message"
+										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required [(ngModel)]="_mailModel.message"
 										 	name="message"></textarea>
 									</mat-form-field>
 								</div>
@@ -60,22 +60,16 @@
 										class="g-recaptcha"
 										siteKey="6LdlfTsUAAAAADpUiMbnFICV3cLoGhB5qWb1IcUV" 
 										required
-										[(ngModel)]="captchaToken"
+										[(ngModel)]="_mailModel.captchaToken"
 										#captchaControl="ngModel"></re-captcha>
 								</div>
 							</div>
-							<button mat-raised-button type="submit" color="accent" role="button" [disabled]="!contactForm.valid || !captchaControl.valid">Enviar</button>
+							<button mat-raised-button type="submit" color="accent" role="button" 
+								>Enviar</button>
 						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div id="loadingModal" #modal class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" data-keyboard="false" data-focus="true" data-backdrop="static">
-		<div class="modal-dialog modal-sm">
-			<div class="container">
-				<mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
-			</div>
-		</div>
+		</div>		
 	</div>
 </section>

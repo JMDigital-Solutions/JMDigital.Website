@@ -1,4 +1,3 @@
-import { MaterialConfirmDialogComponent } from './helpers/material-confirm-dialog/material-confirm-dialog.component';
 import { MaterialModule } from './material-module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { CanDeactivateGuardService } from './services/can-deactivate-guard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 @NgModule({
 	declarations: [
@@ -25,7 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
 		ContactComponent,
 		FooterComponent,
 		AboutComponent,
-		MaterialConfirmDialogComponent
+		DialogComponent
+	],
+	entryComponents: [
+		DialogComponent,
 	],
 	imports: [
 		BrowserModule.withServerTransition({appId: 'jmdigital-website'}),

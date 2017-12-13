@@ -136,6 +136,12 @@ button.mat-raised-button {
 	}
 }
 
+.cdk-global-scrollblock {
+    position: static !important;
+    width: 100% !important;
+    overflow-y: visible !important;
+}
+
 .bg-light-primary {
 	@include background-opacity($primary-color-dark, 0.2);
 }
