@@ -65,7 +65,7 @@
 								</div>
 							</div>
 							<button mat-raised-button type="submit" color="accent" role="button" 
-								>Enviar</button>
+								[disabled]="!contactForm.valid || !captchaControl.valid">Enviar</button>
 						</form>
 					</div>
 				</div>
