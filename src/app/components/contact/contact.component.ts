@@ -66,8 +66,7 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 						minWidth: '662px',
 						disableClose: true,
 						autoFocus: true,
-						data: this._dialogData,
-						panelClass: ['dialog']
+						data: this._dialogData
 					});
 				});
 		}

@@ -9,7 +9,6 @@ export class MailService {
 	constructor(private _http: HttpClient) { }
 
 	sendMail(mail: MailModel) {
-		console.log(mail);
 		return this._http.post<string[]>('https://api.jmdigital.com.ar/api/mail', mail)
 			.map(
 				(values) => {
