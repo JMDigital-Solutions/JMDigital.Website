@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { DialogDataModel } from '../../models/DialogDataModel';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
 	moduleId: module.id,
@@ -24,7 +25,8 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 	@ViewChild('contactForm') contactForm: NgForm;
 
 	constructor(private _mailService: MailService,
-		public dialog: MatDialog) { }
+		private dialog: MatDialog,
+		private router: Router) { }
 
 	ngOnInit() {
 		this._mailModel = {
@@ -37,18 +39,6 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 		};
 	}
 
-	openDialog() {
-		const dialogRef = this.dialog.open(DialogComponent, {
-			width: '250px',
-			data: { name: 'Juan Manuel', animal: 'Perro' }
-		});
-
-		dialogRef.afterClosed().subscribe(result => {
-			console.log('The dialog was closed');
-			console.log(result);
-		});
-	}
-
 	onSubmit() {
 
 		if (!this._isSubmited && this.contactForm.dirty) {
@@ -58,6 +48,14 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 				(values) => {
 					const data = values;
 					this._isSubmited = true;
+					this._dialogData = { title: 'Mail enviado', body: 'El mail fue enviado, me estaré poniendo en contacto a la brevedad.' };
+					const dialogRef = this.dialog.open(DialogComponent, {
+						minWidth: '662px',
+						disableClose: true,
+						autoFocus: true,
+						data: this._dialogData
+					});
+					this.router.navigate(['home']);
 				},
 				(error) => {
 					this._isSubmited = false;
