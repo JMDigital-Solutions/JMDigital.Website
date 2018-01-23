@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
@@ -11,6 +13,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { CanDeactivateGuardService } from './services/can-deactivate-guard.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 @NgModule({
 	declarations: [
@@ -19,16 +24,23 @@ import { AboutComponent } from './components/about/about.component';
 		NavbarComponent,
 		ContactComponent,
 		FooterComponent,
-		AboutComponent
+		AboutComponent,
+		DialogComponent
+	],
+	entryComponents: [
+		DialogComponent,
 	],
 	imports: [
-		BrowserModule,
+		BrowserModule.withServerTransition({appId: 'jmdigital-website'}),
 		AppRoutingModule,
 		FormsModule,
 		BrowserAnimationsModule,
-		MaterialModule
+		MaterialModule,
+		HttpClientModule,
+		RecaptchaFormsModule,
+		RecaptchaModule.forRoot(),
 	],
-	providers: [],
+	providers: [CanDeactivateGuardService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

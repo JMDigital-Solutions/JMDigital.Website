@@ -2,8 +2,8 @@
 @import "./_variables.scss";
 @import "./_mixins.scss";
 
-@import '~font-awesome/css/font-awesome.min.css';
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/font-awesome/scss/font-awesome';
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
@@ -121,6 +121,27 @@ button.mat-raised-button {
 	}
 }
 
+.mat-mini-fab {
+
+	& i{
+		font-weight: bolder;
+	}
+
+	&:hover{
+		color: white !important;
+	}
+	
+	&:focus {
+		outline:0
+	}
+}
+
+.cdk-global-scrollblock {
+    position: static !important;
+    width: 100% !important;
+    overflow-y: visible !important;
+}
+
 .bg-light-primary {
 	@include background-opacity($primary-color-dark, 0.2);
 }
@@ -143,9 +164,13 @@ form {
 	& .mat-input-container {
 		width: 100%;
 	}
-
+	
 	& .form-control:focus {
 		background-color: transparent;
+		outline: 0;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
 	}
 }
 

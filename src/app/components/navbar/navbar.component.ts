@@ -1,5 +1,5 @@
 import { navbarAnimations } from './navbar.component.animations';
-import { Component, OnInit, Output, EventEmitter, NgZone, Inject } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, NgZone, Inject, HostListener } from '@angular/core';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -21,21 +21,20 @@ export class NavbarComponent implements OnInit {
 
 	shrinkNav = false;
 
-	constructor(zone: NgZone) {
-		window.onscroll = () => {
-
+	@HostListener('window:scroll', [])
+	onWindowScroll() {
 		if (window.pageYOffset > 100) {
-			zone.run(() => {
+			this.zone.run(() => {
 				this.shrinkNav = true;
 			});
 		} else {
-			zone.run(() => {
+			this.zone.run(() => {
 				this.shrinkNav = false;
 			});
 		}
-
-		};
 	}
+
+	constructor(private zone: NgZone) {}
 
 	ngOnInit() {}
 }

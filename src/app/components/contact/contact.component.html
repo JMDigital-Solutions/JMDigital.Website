@@ -16,45 +16,60 @@
 				<div class="card">
 					<h5 class="card-header">Contacto</h5>
 					<div class="card-body">
-						<form>
+						<form (ngSubmit)="onSubmit()" #contactForm="ngForm" method="post">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Nombre" autocomplete="false">
+										<input matInput class="form-control" placeholder="Nombre" required [(ngModel)]="_mailModel.name" name="name">
 									</mat-form-field>
 								</div>
 								<div class="form-group col-md-6">
 									<mat-form-field>
-										<input matInput class="form-control" placeholder="Apellido" autocomplete="false">
+										<input matInput class="form-control" placeholder="Apellido" required [(ngModel)]="_mailModel.lastName"
+											name="lastName">
 									</mat-form-field>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="email" class="form-control" placeholder="Email" autocomplete="false">
+										<input matInput type="email" class="form-control" placeholder="Email" [(ngModel)]="_mailModel.email"
+											name="email" email required aria-describedby="emailHelperBlock">
 									</mat-form-field>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<input matInput type="text" class="form-control" placeholder="Telefono" autocomplete="false">
+										<input matInput type="text" class="form-control" placeholder="Telefono" [(ngModel)]="_mailModel.phoneNbr"
+										 	name="phone">
 									</mat-form-field>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md">
 									<mat-form-field>
-										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" autocomplete="false"></textarea>
+										<textarea matInput rows="5" class="form-control" placeholder="Mensaje" required [(ngModel)]="_mailModel.message"
+										 	name="message"></textarea>
 									</mat-form-field>
 								</div>
 							</div>
-							<button mat-raised-button type="submit" color="accent" role="button">Enviar</button>
+							<div class="row">
+								<div class="col-md-6 pb-3 mx-auto">
+									<re-captcha name="captchaToken"
+										class="g-recaptcha"
+										siteKey="6LdlfTsUAAAAADpUiMbnFICV3cLoGhB5qWb1IcUV" 
+										required
+										[(ngModel)]="_mailModel.captchaToken"
+										#captchaControl="ngModel"></re-captcha>
+								</div>
+							</div>
+							<button mat-raised-button type="submit" color="accent" role="button" 
+								[disabled]="!contactForm.valid || !captchaControl.valid">Enviar</button>
 						</form>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>		
 	</div>
 </section>
