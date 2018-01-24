@@ -16,6 +16,8 @@ import { AboutComponent } from './components/about/about.component';
 import { CanDeactivateGuardService } from './services/can-deactivate-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './shared/dialog/dialog.component';
+import { MailService } from './services/mail.service';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
 	declarations: [
@@ -25,7 +27,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
 		ContactComponent,
 		FooterComponent,
 		AboutComponent,
-		DialogComponent
+		DialogComponent,
+		SpinnerComponent
 	],
 	entryComponents: [
 		DialogComponent,
@@ -40,7 +43,7 @@ import { DialogComponent } from './shared/dialog/dialog.component';
 		RecaptchaFormsModule,
 		RecaptchaModule.forRoot(),
 	],
-	providers: [CanDeactivateGuardService],
+	providers: [CanDeactivateGuardService, MailService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
