@@ -13,14 +13,14 @@ import { Router } from '@angular/router';
 	moduleId: module.id,
 	selector: 'app-contact',
 	templateUrl: 'contact.component.html',
-	styleUrls: ['contact.component.scss'],
-	providers: [MailService]
+	styleUrls: ['contact.component.scss']
 })
 export class ContactComponent implements OnInit, CanComponentDeactivateService {
 
-	private _isSubmited: Boolean = false;
+	_isSubmited = false;
 	_mailModel: MailModel;
 	_dialogData: DialogDataModel;
+	_sending = false;
 
 	@ViewChild('contactForm') contactForm: NgForm;
 
@@ -41,11 +41,15 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 
 	onSubmit() {
 
+		// Show spinner
+		this._sending = true;
+
 		if (!this._isSubmited && this.contactForm.dirty) {
 			this._isSubmited = true;
 			this._mailService.sendMail(this._mailModel)
 				.subscribe(
 				(values) => {
+					this._sending = false;
 					const data = values;
 					this._isSubmited = true;
 					this._dialogData = { title: 'Mail enviado', body: 'El mail fue enviado, me estaré poniendo en contacto a la brevedad.' };
@@ -58,6 +62,7 @@ export class ContactComponent implements OnInit, CanComponentDeactivateService {
 					this.router.navigate(['home']);
 				},
 				(error) => {
+					this._sending = false;
 					this._isSubmited = false;
 					this._dialogData = { title: 'Error', body: 'Se ha producido un error al intentar enviar el mail. Inténtelo de nuevo mas tarde.' };
 					const dialogRef = this.dialog.open(DialogComponent, {
