@@ -6,14 +6,15 @@ import 'rxjs/Rx';
 @Injectable()
 export class MailService {
 
+	private _apiUrl = 'https://api.jmdigital.com.ar/api';
+
 	constructor(private _http: HttpClient) { }
 
 	sendMail(mail: MailModel) {
-		return this._http.post<string[]>('https://api.jmdigital.com.ar/api/mail', mail, { withCredentials: true })
+		return this._http.post<string[]>('/SendMail', mail, { withCredentials: true })
 			.map(
 				(values) => {
-					const data = values;
-					return data;
+					return values;
 				}
 			);
 	}
