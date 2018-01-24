@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
 		{ Link: 'contacto',	Label: 'Contacto' }
 	];
 
+	isCollapsed = true;
 	shrinkNav = false;
 
 	@HostListener('window:scroll', [])

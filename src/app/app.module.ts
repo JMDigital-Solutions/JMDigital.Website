@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { MailService } from './services/mail.service';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { BootstrapModule } from './bootstrap.module';
 
 @NgModule({
 	declarations: [
@@ -42,6 +43,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 		HttpClientModule,
 		RecaptchaFormsModule,
 		RecaptchaModule.forRoot(),
+		BootstrapModule
 	],
 	providers: [CanDeactivateGuardService, MailService],
 	bootstrap: [AppComponent]
