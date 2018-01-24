@@ -1,6 +1,7 @@
 import { navbarAnimations } from './navbar.component.animations';
 import { Component, OnInit, Output, EventEmitter, NgZone, Inject, HostListener } from '@angular/core';
 import { trigger, state, transition, style, animate } from '@angular/animations';
+import { NavItemModel } from '../../models/NavItemModel';
 
 @Component({
 	moduleId: module.id,
@@ -13,10 +14,10 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
 })
 export class NavbarComponent implements OnInit {
 
-	tabLinks: NavLinks[] = [
-		{ link: 'home', label: 'Inicio' },
-		{ link: 'acerca', label: 'Conocé Más' },
-		{ link: 'contacto',	label: 'Contacto' }
+	tabLinks: NavItemModel[] = [
+		{ Link: 'home', Label: 'Inicio' },
+		{ Link: 'acerca', Label: 'Conocé Más' },
+		{ Link: 'contacto',	Label: 'Contacto' }
 	];
 
 	shrinkNav = false;
@@ -37,9 +38,4 @@ export class NavbarComponent implements OnInit {
 	constructor(private zone: NgZone) {}
 
 	ngOnInit() {}
-}
-
-export interface NavLinks {
-	link: string;
-	label: string;
 }

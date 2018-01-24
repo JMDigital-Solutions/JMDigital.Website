@@ -1,13 +1,13 @@
 <nav [@navbarAnimations]="shrinkNav ? 'shrink' : 'enlarge'" class="navbar navbar-expand-md fixed-top" id="mainNav">
 	<a routerLink="home" class="navbar-brand">JMDigital</a>
-	<button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navMenu"
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu"
 	    aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-		<a><i class="fa fa-2x fa-bars" aria-hidden="true"></i></a>
+		<a class="navbar-toggler-icon"><i class="fa fa-2x fa-bars" aria-hidden="true"></i></a>
 	</button>
-	<div class="navbar-collapse collapse" id="navMenu">
+	<div class="collapse navbar-collapse" id="navMenu">
 		<ul mat-tab-nav-bar class="ml-auto navbar-nav" role="navigation">
 			<li mat-tab-link *ngFor="let tabLink of tabLinks;">
-				<a [routerLink]="tabLink.link" routerLinkActive="active">{{tabLink.label}}
+				<a [routerLink]="tabLink.Link" routerLinkActive="active">{{tabLink.Label}}
 				</a>
 			</li>
 		</ul>
