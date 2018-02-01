@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class MailService {
 
-	private _apiUrl = 'https://api.jmdigital.com.ar/api';
+	private _apiUrl = 'https://api.jmdigital.com.ar/api/mail';
 
 	constructor(private _http: HttpClient) { }
 
