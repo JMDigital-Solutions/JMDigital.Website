@@ -1,4 +1,5 @@
-import { Component, NgZone, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @Component({
 	moduleId: module.id,
@@ -8,7 +9,7 @@ import { Component, NgZone, Inject, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-	constructor() { }
+	constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) { }
 
 	ngOnInit(): void {
 

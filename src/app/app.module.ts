@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
@@ -43,7 +45,8 @@ import { BootstrapModule } from './bootstrap.module';
 		HttpClientModule,
 		RecaptchaFormsModule,
 		RecaptchaModule.forRoot(),
-		BootstrapModule
+		BootstrapModule,
+		Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
 	],
 	providers: [CanDeactivateGuardService, MailService],
 	bootstrap: [AppComponent]
