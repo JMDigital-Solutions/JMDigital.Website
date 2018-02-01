@@ -11,7 +11,7 @@ export class MailService {
 	constructor(private _http: HttpClient) { }
 
 	sendMail(mail: MailModel) {
-		return this._http.post<string[]>('/SendMail', mail, { withCredentials: true })
+		return this._http.post<string[]>(this._apiUrl + '/SendMail', mail, { withCredentials: true })
 			.map(
 				(values) => {
 					return values;
